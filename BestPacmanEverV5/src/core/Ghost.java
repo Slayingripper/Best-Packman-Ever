@@ -1,4 +1,4 @@
-package sample;
+package core;
 
 
 
@@ -7,6 +7,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.Random;
+
+import engine.GameManager;
 
 
 public class Ghost extends Rectangle implements Runnable {
@@ -39,7 +41,8 @@ public class Ghost extends Rectangle implements Runnable {
         return directions[rnd];
     }
 
-    private boolean getRandomBoolean() {
+    @SuppressWarnings("unused")
+	private boolean getRandomBoolean() {
         Random rand = new Random();
         return rand.nextBoolean();
     }
@@ -200,6 +203,39 @@ public class Ghost extends Rectangle implements Runnable {
                 }
             }
         };
+    }
+    /**
+    *Helps in detecting the entry way of the ghosts
+    * @param pacmanCY
+    * @param pacmanCX
+    * @param pacmanLeft
+    * @param pacmanRight
+    * @param pacmanUp
+    * @param pacmanDown
+    * @param ghostLeft
+    * @param ghostRight
+    * @param ghostUP
+    * @param ghostDown
+    */
+    public boolean walltouch(Pacman pacman) {
+    	double pacmanCY = pacman.getCenterY();
+        double pacmanCX = pacman.getCenterX();
+        double pacmanLeft = pacmanCX - pacman.getRadius();
+        double pacmanRight = pacmanCX + pacman.getRadius();
+        double pacmanUp = pacmanCY - pacman.getRadius();
+        double pacmanDown = pacmanCY + pacman.getRadius();
+        double ghostLeft = this.getX();
+        double ghostRight = this.getX() + this.getWidth();
+        double ghostUP = this.getY();
+        double ghostDown = this.getY() + this.getHeight();
+        
+        if ((pacmanLeft <= ghostRight && pacmanLeft >= ghostLeft) || (pacmanRight >= ghostLeft && pacmanRight <= ghostRight)) {
+            if ((pacmanUp <= ghostDown && pacmanUp >= ghostUP) || (pacmanDown >= ghostUP && pacmanDown <= ghostDown)) {
+            	return true;
+            }
+        }
+        
+    	return false;
     }
 
     @Override

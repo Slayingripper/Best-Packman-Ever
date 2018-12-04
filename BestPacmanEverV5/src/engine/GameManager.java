@@ -1,4 +1,4 @@
-package sample;
+package engine;
 
 
 
@@ -12,6 +12,12 @@ import javafx.scene.text.Font;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import core.Cookie;
+import core.Ghost;
+import core.Maze;
+import core.Pacman;
+import core.Score;
 
 public class GameManager {
 
@@ -33,7 +39,7 @@ public class GameManager {
     /**
      * Constructor
      */
-    GameManager(Group root) {
+    public GameManager(Group root) {
         this.root = root;
         this.maze = new Maze();
         this.pacman = new Pacman(2.5 * BarObstacle.THICKNESS, 2.5 * BarObstacle.THICKNESS);
@@ -259,6 +265,8 @@ public class GameManager {
             case DOWN:
                 this.downPacmanAnimation.start();
                 break;
+		default:
+			break;
         }
     }
 
@@ -280,6 +288,8 @@ public class GameManager {
             case DOWN:
                 this.downPacmanAnimation.stop();
                 break;
+		default:
+			break;
         }
     }
 

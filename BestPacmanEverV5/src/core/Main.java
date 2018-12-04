@@ -1,7 +1,8 @@
-package sample;
+package core;
 
 
 
+import engine.GameManager;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;

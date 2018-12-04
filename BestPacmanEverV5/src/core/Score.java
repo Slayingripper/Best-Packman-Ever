@@ -1,7 +1,8 @@
-package sample;
+package core;
 
 
 
+import engine.BarObstacle;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -11,8 +12,13 @@ public class Score {
 
     public Text score;
     public Text lifes;
+    /**
+     * Creates Score
+     * @param counts the score 
+     * @param player has 3 lives 
+     */
 
-    Score(Group root) {
+    public Score(Group root) {
         this.score = new Text(BarObstacle.THICKNESS * 4, BarObstacle.THICKNESS * 28, "Score: 0");
         this.lifes = new Text(BarObstacle.THICKNESS * 20, BarObstacle.THICKNESS * 28,"Lifes: 3");
         score.setFill(Color.MAGENTA);

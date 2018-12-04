@@ -1,4 +1,4 @@
-package sample;
+package core;
 
 
 
@@ -7,11 +7,13 @@ import javafx.scene.Group;
 import java.util.HashSet;
 import java.util.Set;
 
+import engine.BarObstacle;
+
 public class Maze {
 
     public Set<BarObstacle> obstacles;
 
-    Maze() {
+    public Maze() {
         obstacles = new HashSet<>();
     }
 
