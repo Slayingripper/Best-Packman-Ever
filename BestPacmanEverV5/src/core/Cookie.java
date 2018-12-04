@@ -17,9 +17,9 @@ public class Cookie extends Circle {
         this.setCenterX(x);
         this.setCenterY(y);
         this.setRadius(12.5);
-        this.setFill(Color.SADDLEBROWN);
-        //Image cookieicon = new Image("/icon/ghost2.png");
-        //this.setFill(new ImagePattern(cookieicon));
+       // this.setFill(Color.SADDLEBROWN);
+        Image cookieicon = new Image("/icon/cookie.png");
+        this.setFill(new ImagePattern(cookieicon));
     }
     
     public boolean isTouching(Pacman pacman) {
