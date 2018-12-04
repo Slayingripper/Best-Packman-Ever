@@ -414,8 +414,11 @@ public class GameManager {
             double ghostRightEdge = ghost.getX() + ghost.getWidth();
             double ghostTopEdge = ghost.getY();
             double ghostBottomEdge = ghost.getY() + ghost.getHeight();
-            if ((pacmanLeftEdge <= ghostRightEdge && pacmanLeftEdge >= ghostLeftEdge) || (pacmanRightEdge >= ghostLeftEdge && pacmanRightEdge <= ghostRightEdge)) {
-                if ((pacmanTopEdge <= ghostBottomEdge && pacmanTopEdge >= ghostTopEdge) || (pacmanBottomEdge >= ghostTopEdge && pacmanBottomEdge <= ghostBottomEdge)) {
+            if ((pacmanLeftEdge <= ghostRightEdge && pacmanLeftEdge >= ghostLeftEdge) || 
+            		(pacmanRightEdge >= ghostLeftEdge && pacmanRightEdge <= ghostRightEdge))
+            {
+                if ((pacmanTopEdge <= ghostBottomEdge && pacmanTopEdge >= ghostTopEdge) 
+                		|| (pacmanBottomEdge >= ghostTopEdge && pacmanBottomEdge <= ghostBottomEdge)) {
                     lifeLost();
                 }
             }

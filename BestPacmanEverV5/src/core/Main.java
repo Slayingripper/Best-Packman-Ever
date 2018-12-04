@@ -1,7 +1,4 @@
 package core;
-
-
-
 import engine.GameManager;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -34,8 +31,19 @@ public class Main extends Application {
         theStage.show();
     }
 
-
+    /**
+     * Play pacman intro music
+     */
     public static void main(String[] args) {
-        launch(args);
+    try {
+    		java.applet.AudioClip clip =
+    		java.applet.Applet.newAudioClip(
+    		new java.net.URL("http://soundbible.com/grab.php?id=1563&type=wav"));
+    		clip.play();
+    		} catch (java.net.MalformedURLException murle) {
+    		System.out.println(murle);
+    		}
+    	launch(args);
+      
     }
 }

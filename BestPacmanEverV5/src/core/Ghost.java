@@ -3,7 +3,9 @@ package core;
 
 
 import javafx.animation.AnimationTimer;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import java.util.Random;
@@ -26,7 +28,8 @@ public class Ghost extends Rectangle implements Runnable {
         this.gameManager = gameManager;
         this.setHeight(50);
         this.setWidth(50);
-        this.setFill(color);
+        Image ghosticon = new Image("/icon/ghost1.png");
+        this.setFill(new ImagePattern(ghosticon));
         this.timesWalked = 0;
         this.direction = "down";
         this.createAnimation();
@@ -205,7 +208,7 @@ public class Ghost extends Rectangle implements Runnable {
         };
     }
     /**
-    *Helps in detecting the entry way of the ghosts
+    *Helps in detecting collisions 
     * @param pacmanCY
     * @param pacmanCX
     * @param pacmanLeft
@@ -217,7 +220,7 @@ public class Ghost extends Rectangle implements Runnable {
     * @param ghostUP
     * @param ghostDown
     */
-    public boolean walltouch(Pacman pacman) {
+    public boolean isTouching(Pacman pacman) {
     	double pacmanCY = pacman.getCenterY();
         double pacmanCX = pacman.getCenterX();
         double pacmanLeft = pacmanCX - pacman.getRadius();
@@ -229,8 +232,10 @@ public class Ghost extends Rectangle implements Runnable {
         double ghostUP = this.getY();
         double ghostDown = this.getY() + this.getHeight();
         
-        if ((pacmanLeft <= ghostRight && pacmanLeft >= ghostLeft) || (pacmanRight >= ghostLeft && pacmanRight <= ghostRight)) {
-            if ((pacmanUp <= ghostDown && pacmanUp >= ghostUP) || (pacmanDown >= ghostUP && pacmanDown <= ghostDown)) {
+        if ((pacmanLeft <= ghostRight && pacmanLeft >= ghostLeft) || (pacmanRight >= ghostLeft && pacmanRight <= ghostRight))
+        {
+            if ((pacmanUp <= ghostDown && pacmanUp >= ghostUP) || (pacmanDown >= ghostUP && pacmanDown <= ghostDown))
+            {
             	return true;
             }
         }
