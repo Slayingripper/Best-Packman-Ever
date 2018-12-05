@@ -21,15 +21,15 @@ public class Ghost extends Rectangle implements Runnable {
     AnimationTimer animation;
     int timesWalked;
 
-    public Ghost(double x, double y, Color color, Maze maze, GameManager gameManager) {
+    public Ghost(double x, double y, ImagePattern image, Maze maze, GameManager gameManager) {
         this.setX(x);
         this.setY(y);
         this.maze = maze;
         this.gameManager = gameManager;
         this.setHeight(50);
         this.setWidth(50);
-        Image ghosticon = new Image("/icon/ghost1.png");
-        this.setFill(new ImagePattern(ghosticon));
+       // Image ghosticon = new Image("/icon/ghost1.png");
+        //this.setFill(new ImagePattern(ghosticon));
         this.timesWalked = 0;
         this.direction = "down";
         this.createAnimation();
