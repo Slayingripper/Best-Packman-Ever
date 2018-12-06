@@ -12,6 +12,7 @@ public class Score {
 
     public Text score;
     public Text lifes;
+	public Object lives;
     /**
      * Creates Score
      * @param counts the score 
