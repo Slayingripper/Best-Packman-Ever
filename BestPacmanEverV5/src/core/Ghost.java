@@ -21,31 +21,36 @@ public class Ghost extends Rectangle implements Runnable {
     AnimationTimer animation;
     int timesWalked;
 
-    public Ghost(double x, double y, ImagePattern image, Maze maze, GameManager gameManager) {
+    public Ghost(double x, double y, String image, Maze maze, GameManager gameManager) {
         this.setX(x);
         this.setY(y);
         this.maze = maze;
         this.gameManager = gameManager;
         this.setHeight(50);
         this.setWidth(50);
-        this.setFill(image);
+        
+        
+        
+        Image ghostColour = new Image("icon/" + image + ".png");
+        this.setFill(new ImagePattern(ghostColour));
+        
         this.timesWalked = 0;
         this.direction = "down";
         this.createAnimation();
     }
 
-  /*  public Ghost(double x, double y, Color color, Maze maze, GameManager gameManager) {
-        this.setX(x);
-        this.setY(y);
-        this.maze = maze;
-        this.gameManager = gameManager;
-        this.setHeight(50);
-        this.setWidth(50);
-        this.setFill(color);
-        this.timesWalked = 0;
-        this.direction = "down";
-        this.createAnimation();
-    }*/
+//    public Ghost(double x, double y, Color color, Maze maze, GameManager gameManager) {
+//        this.setX(x);
+//        this.setY(y);
+//        this.maze = maze;
+//        this.gameManager = gameManager;
+//        this.setHeight(50);
+//        this.setWidth(50);
+//        this.setFill(color);
+//        this.timesWalked = 0;
+//        this.direction = "down";
+//        this.createAnimation();
+//    }
 
 
     private String getRandomDirection(String exclude1, String exclude2) {
