@@ -321,6 +321,9 @@ public class GameManager {
                 case "left":
                     if (!maze.isTouching(pacman.getCenterX() - pacman.getRadius(), pacman.getCenterY(), 15)) {
                         pacman.setCenterX(pacman.getCenterX() - step);
+                        if (pacman.getCenterX()<0) {
+                        	pacman.setCenterX(1225);
+                        }
                         checkCookieCoalition(pacman, "x");
                         checkGhostCoalition();
                     }
@@ -328,6 +331,9 @@ public class GameManager {
                 case "right":
                     if (!maze.isTouching(pacman.getCenterX() + pacman.getRadius(), pacman.getCenterY(), 15)) {
                         pacman.setCenterX(pacman.getCenterX() + step);
+                        if (pacman.getCenterX()>1225) {
+                        	pacman.setCenterX(0);
+                        }
                         checkCookieCoalition(pacman, "x");
                         checkGhostCoalition();
                     }

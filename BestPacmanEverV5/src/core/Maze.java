@@ -1,7 +1,6 @@
 package core;
 
 
-
 import javafx.scene.Group;
 
 import java.util.HashSet;
@@ -58,6 +57,8 @@ public class Maze {
     /**
      * Draws the maze
      * @param root
+     * Leave a gap between the 2 vertical borders at the edge to implement
+     * pacman appearing on the opposite side if you pass through them 
      */
     public void CreateMaze(Group root) {
         //~~~~~~~~~~~~~~~~~~~~~~~~~ frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,9 +67,12 @@ public class Maze {
         // bottom
         this.obstacles.add(new BarObstacle(0, 600, "horizontal", 48));
         // left
-        this.obstacles.add(new BarObstacle(0, 0, "vertical", 25));
+        this.obstacles.add(new BarObstacle(0, 0, "vertical", 11));
+        this.obstacles.add(new BarObstacle(0, 350, "vertical", 11));
+
         // right
-        this.obstacles.add(new BarObstacle(1225 - BarObstacle.THICKNESS, 0, "vertical", 25));
+        this.obstacles.add(new BarObstacle(1225 - BarObstacle.THICKNESS, 0, "vertical", 11));
+        this.obstacles.add(new BarObstacle(1225 - BarObstacle.THICKNESS, 350, "vertical", 11));
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~ Islands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // obsTopLeft
