@@ -267,7 +267,7 @@ public class GameManager {
                 this.upPacmanAnimation.start();
                 break;
             case DOWN:
-                this.downPacmanAnimation.start();
+                this.downPacmanAnimation.start();      
                 break;
 		default:
 			break;
