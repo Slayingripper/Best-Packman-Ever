@@ -23,11 +23,7 @@ public class Cookie extends Circle {
     }
     
     public boolean isTouching(Pacman pacman) {
-    	if ((pacman.getCenterX() 
-    			+ pacman.getRadius()) >= this.getCenterX() 
-    			&& (pacman.getCenterX() - pacman.getRadius()) <= this.getCenterX() 
-    			&& (pacman.getCenterY() + pacman.getRadius()) >= this.getCenterY()
-    			&& (pacman.getCenterY() - pacman.getRadius()) <= this.getCenterY())
+    	if ((pacman.getCenterX() + pacman.getRadius()) >= this.getCenterX() && (pacman.getCenterX() - pacman.getRadius()) <= this.getCenterX() && (pacman.getCenterY() + pacman.getRadius()) >= this.getCenterY() && (pacman.getCenterY() - pacman.getRadius()) <= this.getCenterY())
     	{
 			if (this.isVisible()) {
 				return true;

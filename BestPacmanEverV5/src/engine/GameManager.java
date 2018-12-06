@@ -240,7 +240,7 @@ public class GameManager {
      * Adds gifs for sprites
      */
     public void generateGhosts() {
-    	
+    /*	
     	ImagePattern ghost1 = new ImagePattern (new javafx.scene.image.Image(getClass().getResource("icon/ghost1.gif").toExternalForm()));
     	ImagePattern ghost2 = new ImagePattern (new javafx.scene.image.Image(getClass().getResource("icon/ghost2.gif").toExternalForm()));
     	ImagePattern ghost3 = new ImagePattern (new javafx.scene.image.Image(getClass().getResource("icon/ghost3.gif").toExternalForm()));
@@ -249,7 +249,13 @@ public class GameManager {
         this.ghosts.add(new Ghost(18.5 * BarObstacle.THICKNESS, 12.5 * BarObstacle.THICKNESS, ghost1 , maze, this));
         this.ghosts.add(new Ghost(22.5 * BarObstacle.THICKNESS, 12.5 * BarObstacle.THICKNESS, ghost2, maze, this));
         this.ghosts.add(new Ghost(28.5 * BarObstacle.THICKNESS, 12.5 * BarObstacle.THICKNESS, ghost3, maze, this));
-        this.ghosts.add(new Ghost(28.5 * BarObstacle.THICKNESS, 9.5 * BarObstacle.THICKNESS, ghost4, maze, this));
+        this.ghosts.add(new Ghost(28.5 * BarObstacle.THICKNESS, 9.5 * BarObstacle.THICKNESS, ghost4, maze, this));*/
+
+        this.ghosts.add(new Ghost(18.5 * BarObstacle.THICKNESS, 12.5 * BarObstacle.THICKNESS, Color.DEEPPINK, maze, this));
+        this.ghosts.add(new Ghost(22.5 * BarObstacle.THICKNESS, 12.5 * BarObstacle.THICKNESS, Color.GREENYELLOW, maze, this));
+        this.ghosts.add(new Ghost(28.5 * BarObstacle.THICKNESS, 12.5 * BarObstacle.THICKNESS, Color.BLACK, maze, this));
+        this.ghosts.add(new Ghost(28.5 * BarObstacle.THICKNESS, 9.5 * BarObstacle.THICKNESS, Color.SPRINGGREEN, maze, this));
+
     }
 
     /**
