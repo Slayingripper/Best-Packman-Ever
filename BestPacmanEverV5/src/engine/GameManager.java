@@ -4,6 +4,7 @@ package engine;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -284,7 +285,7 @@ public class GameManager {
     }
 
     /**
-     * Stops the pacman
+     * Stops the pacman according to the users input
      * @param event
      */
     public void stopPacman(KeyEvent event) {
