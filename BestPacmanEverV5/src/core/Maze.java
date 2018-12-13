@@ -4,7 +4,6 @@ package core;
 import javafx.scene.Group;
 import java.util.HashSet;
 import java.util.Set;
-
 import engine.BarObstacle;
 
 public class Maze {
@@ -53,6 +52,15 @@ public class Maze {
         return isTouching;
     }
 
+//    static Color Color = Color.CADETBLUE;
+//    public static void setBarcolor(Color color) {
+//    	Maze.color = color;
+//    }
+    
+    
+    
+    
+    
     /**
      * Draws the maze
      * @param root

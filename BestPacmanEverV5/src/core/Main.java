@@ -41,6 +41,12 @@ public class Main extends Application {
 //        theScene.addEventHandler(KeyEvent.KEY_PRESSED, event -> gameManager.restartGame(event));
 //
 //        theStage.show();
+    	
+    	/*
+    	 * loads up the Homescreen with 
+    	 * a window size of 1225x600
+    	 * 
+    	 */
     	 Parent root = FXMLLoader.load(getClass().getResource("homescreen.fxml"));
          theStage.setTitle( "Pacman" );
          Scene start = new Scene(root, 1225, 600);
@@ -52,6 +58,7 @@ public class Main extends Application {
 
     /**
      * Play pacman intro music
+     * when the program starts up.
      */
     @SuppressWarnings("deprecation")
 	public static void main(String[] args) {

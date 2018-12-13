@@ -52,6 +52,7 @@ public class GameManager {
 
     /**
      * Constructor
+     * Sets up the settings for pacman 
      */
     public GameManager(Group root) {
         this.root = root;
@@ -72,6 +73,7 @@ public class GameManager {
 //}
     /**
      * Set one life less
+     * And outputs a sound when pacman dies
      */
     private void lifeLost() {
         this.leftPacmanAnimation.stop();
@@ -102,9 +104,12 @@ public class GameManager {
             
         }
     }
+    /*
+     * Create a window that Displays the score of the player
+     */
    private void createWindow() {
     	      //Create and set up the window.
-    	      JFrame frame = new JFrame("Simple GUI");
+    	      JFrame frame = new JFrame("Your score");
     	      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	      JLabel textLabel = new JLabel("Score:"+score,SwingConstants.CENTER);
     	      textLabel.setPreferredSize(new Dimension(300, 100));
@@ -155,6 +160,7 @@ public class GameManager {
 
     /**
      * Draws the board of the game with the cookies and the Pacman
+     * by adding everything into an array 
      */
     public void drawBoard() {
         this.maze.CreateMaze(root);
