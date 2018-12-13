@@ -4,6 +4,7 @@ package core;
 
 import engine.BarObstacle;
 import javafx.scene.Group;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -30,7 +31,7 @@ public class Score {
 
         root.getChildren().add(score);
         root.getChildren().add(lifes);
-        if 
+     
     }
     
 }

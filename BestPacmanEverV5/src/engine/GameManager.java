@@ -1,12 +1,14 @@
 package engine;
 
 
-
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
@@ -55,7 +57,9 @@ public class GameManager {
         this.score = 0;
         this.cookiesEaten = 0;
     }
-
+//public void colorPicker() {
+//	root.setBackground(new Background(new BackgroundFill(Color.backgroundbtn1,null,null)));
+//}
     /**
      * Set one life less
      */
@@ -73,11 +77,21 @@ public class GameManager {
         score -= 10;
         this.scoreBoard.lifes.setText("Lifes: " + this.lifes);
         this.scoreBoard.score.setText("Score: " + this.score);
+        try {
+      		@SuppressWarnings("deprecation")
+			java.applet.AudioClip clip =
+      		java.applet.Applet.newAudioClip(
+      		new java.net.URL("https://www.thesoundarchive.com/play-wav-files.asp?sound=ringtones/pacman_death.wav"));
+      		clip.play();
+      		} catch (java.net.MalformedURLException murle) {
+      		System.out.println(murle);
+      		}
         if (lifes == 0) {
-            this.endGame();
+        	this.endGame();
+            
         }
     }
-
+    
     /**
      * Ends the game
      */
@@ -94,6 +108,7 @@ public class GameManager {
         endGame.setFill(Color.ROYALBLUE);
         root.getChildren().remove(this.scoreBoard.score);
         root.getChildren().remove(this.scoreBoard.lifes);
+       
         root.getChildren().add(endGame);
     }
 
@@ -414,15 +429,16 @@ public class GameManager {
             }
             this.scoreBoard.score.setText("Score: " + this.score);
             if (this.cookiesEaten == this.cookieSet.size()) {
-            	if (score == 700) {
-            		
-            	}
+//            	if (score == 700) {
+//            		popscore();
+//            	}
                 this.endGame();
             }
         }
     }
 
-    /**
+
+	/**
      * Checks if pacman is touching a ghost
      */
     public void checkGhostCoalition() {
