@@ -18,13 +18,13 @@
    <children>
       <BorderPane prefHeight="263.0" prefWidth="322.0">
          <left>
-            <Button fx:id="startbtn" mnemonicParsing="false" onAction="#startGame" text="START" BorderPane.alignment="CENTER" />
+            <Button fx:id="startbtn" mnemonicParsing="false" onAction="#startGame" prefHeight="25.0" prefWidth="145.0" text="START" BorderPane.alignment="CENTER" />
          </left>
          <right>
-            <Button fx:id="setupbtn" mnemonicParsing="false" onAction="#Setup" text="SETUP" BorderPane.alignment="CENTER" />
+            <Button fx:id="setupbtn" mnemonicParsing="false" onAction="#Setup" prefHeight="25.0" prefWidth="129.0" text="SETUP" BorderPane.alignment="CENTER" />
          </right>
          <top>
-            <ImageView fitHeight="234.0" fitWidth="318.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="131.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
                   <Image url="@../icon/pacman.png" />
                </image>

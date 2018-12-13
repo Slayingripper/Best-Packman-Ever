@@ -1,6 +1,9 @@
 package engine;
 
 
+
+
+
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
@@ -13,9 +16,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import core.Cookie;
 import core.Ghost;
@@ -87,11 +97,23 @@ public class GameManager {
       		System.out.println(murle);
       		}
         if (lifes == 0) {
+        	createWindow();
         	this.endGame();
             
         }
     }
-    
+   private void createWindow() {
+    	      //Create and set up the window.
+    	      JFrame frame = new JFrame("Simple GUI");
+    	      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	      JLabel textLabel = new JLabel("Score:"+score,SwingConstants.CENTER);
+    	      textLabel.setPreferredSize(new Dimension(300, 100));
+    	      frame.getContentPane().add(textLabel, BorderLayout.CENTER);
+    	      //Display the window.
+    	      frame.setLocationRelativeTo(null);
+    	      frame.pack();
+    	      frame.setVisible(true);
+    	   }
     /**
      * Ends the game
      */
