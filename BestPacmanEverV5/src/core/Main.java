@@ -16,9 +16,11 @@ import static javafx.scene.paint.Color.*;
 
 import engine.GameManager;
 
+@SuppressWarnings("unused")
 public class Main extends Application {
 	static Stage newStage;
-    @Override
+    @SuppressWarnings("static-access")
+	@Override
     public void start(Stage theStage) throws Exception{
 ////        Parent root = FXMLLoader.load(getClass().getResource("pacman.fxml"));
 //        theStage.setTitle( "Pacman" );
@@ -51,7 +53,8 @@ public class Main extends Application {
     /**
      * Play pacman intro music
      */
-    public static void main(String[] args) {
+    @SuppressWarnings("deprecation")
+	public static void main(String[] args) {
     	 try {
       		java.applet.AudioClip clip =
       		java.applet.Applet.newAudioClip(

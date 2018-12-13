@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="core.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -18,15 +18,15 @@
    <children>
       <BorderPane prefHeight="263.0" prefWidth="322.0">
          <left>
-            <Button mnemonicParsing="false" onAction="#displayGame" text="START" BorderPane.alignment="CENTER" />
+            <Button fx:id="startbtn" mnemonicParsing="false" onAction="#startGame" text="START" BorderPane.alignment="CENTER" />
          </left>
          <right>
-            <Button mnemonicParsing="false" onAction="#setup" text="SETUP" BorderPane.alignment="CENTER" />
+            <Button fx:id="setupbtn" mnemonicParsing="false" onAction="#Setup" text="SETUP" BorderPane.alignment="CENTER" />
          </right>
          <top>
             <ImageView fitHeight="234.0" fitWidth="318.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../../../bin/icon/main.gif" />
+                  <Image url="@../icon/pacman.png" />
                </image>
             </ImageView>
          </top>

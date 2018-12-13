@@ -414,6 +414,9 @@ public class GameManager {
             }
             this.scoreBoard.score.setText("Score: " + this.score);
             if (this.cookiesEaten == this.cookieSet.size()) {
+            	if (score == 700) {
+            		
+            	}
                 this.endGame();
             }
         }
