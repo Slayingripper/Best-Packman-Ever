@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="core.Cookie" project="best-packman-ever" 
     file="/best-packman-ever/BestPacmanEverV5/src/core/Cookie.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="152" y="162"/>    
+    <position height="-1" width="-1" x="137" y="137"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -265,10 +265,10 @@
   <association id="50">    
     <end type="SOURCE" refId="9" navigable="false">      
       <attribute id="51" name="cookieSet">        
-        <position height="0" width="0" x="-111" y="-60"/>      
+        <position height="0" width="0" x="-126" y="-85"/>      
       </attribute>      
       <multiplicity id="52" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="-111" y="-60"/>      
+        <position height="0" width="0" x="-126" y="-85"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    

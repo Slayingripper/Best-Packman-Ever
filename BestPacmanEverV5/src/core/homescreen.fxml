@@ -16,17 +16,17 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <BorderPane prefHeight="263.0" prefWidth="322.0">
+      <BorderPane prefHeight="600.0" prefWidth="1225.0" style="-fx-background-color: BLACK;">
          <left>
-            <Button fx:id="startbtn" mnemonicParsing="false" onAction="#startGame" prefHeight="25.0" prefWidth="145.0" text="START" BorderPane.alignment="CENTER" />
+            <Button fx:id="startbtn" mnemonicParsing="false" onAction="#startGame" prefHeight="25.0" prefWidth="422.0" text="START" BorderPane.alignment="CENTER" />
          </left>
          <right>
-            <Button fx:id="setupbtn" mnemonicParsing="false" onAction="#Setup" prefHeight="25.0" prefWidth="129.0" text="SETUP" BorderPane.alignment="CENTER" />
+            <Button fx:id="setupbtn" mnemonicParsing="false" onAction="#Setup" prefHeight="25.0" prefWidth="441.0" text="SETUP" BorderPane.alignment="CENTER" />
          </right>
          <top>
-            <ImageView fitHeight="131.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+            <ImageView fitHeight="736.0" fitWidth="864.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../icon/pacman.png" />
+                  <Image url="@../icon/Pac-man-logo.gif" />
                </image>
             </ImageView>
          </top>
