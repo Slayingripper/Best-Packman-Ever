@@ -154,6 +154,7 @@ public class GameManager {
                    edit.read( br, null );
                    br.close();
                    edit.requestFocus();
+                   
                }
                catch(Exception e2) { System.out.println(e2); }
            }
