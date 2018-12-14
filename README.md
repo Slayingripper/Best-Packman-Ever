@@ -3,7 +3,7 @@
 Best Pacman Ever
 
 
-##Features
+###Features
 
 Custom Colour Support
 Sounds and Intro music
