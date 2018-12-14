@@ -13,8 +13,8 @@
             <Image url="@../icon/set.png" />
          </image>
       </ImageView>
-      <ColorPicker fx:id="backgroundbtn" layoutX="313.0" layoutY="101.0" promptText="Background" />
-      <ColorPicker fx:id="obstaclebtn" layoutX="313.0" layoutY="200.0" promptText="obsticle" />
-      <Button layoutX="310.0" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="124.0" text="Save" />
+      <ColorPicker fx:id="background" layoutX="313.0" layoutY="101.0" promptText="Background" />
+      <ColorPicker fx:id="obstacle" layoutX="313.0" layoutY="200.0" promptText="obstacle" />
+      <Button layoutX="310.0" layoutY="349.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="124.0"  text="Save" />
    </children>
 </Pane>

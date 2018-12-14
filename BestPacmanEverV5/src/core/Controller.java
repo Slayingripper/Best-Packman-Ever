@@ -28,9 +28,9 @@ public class Controller {
   theStage.setScene( theScene );
 
   Canvas canvas = new Canvas( 1225, 600 );
-  GraphicsContext gc = canvas.getGraphicsContext2D();
-  gc.setFill(background);
-  gc.fillRect(0,0,1225,600);
+  GraphicsContext mainground = canvas.getGraphicsContext2D();
+  mainground.setFill(background);
+  mainground.fillRect(0,0,1225,600);
 
   root.getChildren().add( canvas );
   GameManager gameManager = new GameManager(root);

@@ -6,15 +6,9 @@ package engine;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
-import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 
 import java.awt.BorderLayout;
@@ -24,27 +18,18 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import javafx.scene.paint.Color;
 import javax.swing.JButton;
-import javax.swing.JEditorPane;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
-
 import core.Cookie;
 import core.Ghost;
 import core.Maze;
@@ -112,8 +97,7 @@ public class GameManager {
         java.awt.Toolkit.getDefaultToolkit().beep(); 
 
         try {
-      		@SuppressWarnings("deprecation")
-			java.applet.AudioClip clip =
+      		java.applet.AudioClip clip =
       		java.applet.Applet.newAudioClip(
       		new java.net.URL("https://www.thesoundarchive.com/play-wav-files.asp?sound=ringtones/pacman_death.wav"));
       		clip.play();

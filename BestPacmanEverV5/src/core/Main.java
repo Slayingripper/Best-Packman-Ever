@@ -51,7 +51,7 @@ public class Main extends Application {
     	 */
     	 Parent root = FXMLLoader.load(getClass().getResource("homescreen.fxml"));
          theStage.setTitle( "Pacman" );
-         Scene start = new Scene(root, 1225, 600, Color.RED);
+         Scene start = new Scene(root, 1225, 600);
          theStage.setScene( start );
          theStage.show();
          this.newStage = theStage;
@@ -62,8 +62,7 @@ public class Main extends Application {
      * Play pacman intro music
      * when the program starts up.
      */
-    @SuppressWarnings("deprecation")
-	public static void main(String[] args) {
+    public static void main(String[] args) {
     	 try {
       		java.applet.AudioClip clip =
       		java.applet.Applet.newAudioClip(

@@ -5,9 +5,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class BarObstacle extends Rectangle {
-
+	public static Color obstacle = Color.BLUE;
     public static double THICKNESS = 25;
-    public static Color obstacle = Color.BLUE;
+   
     /**
      *
      * @param x
@@ -16,7 +16,8 @@ public class BarObstacle extends Rectangle {
      * @param length - the length of the bar (1 == 100px)
      */
     public BarObstacle(double x, double y, String orientation, double length) {
-        this.setX(x);
+    	
+    	this.setX(x);
         this.setY(y);
         if (orientation.equals("horizontal")) {
             this.setHeight(BarObstacle.THICKNESS);
@@ -29,6 +30,7 @@ public class BarObstacle extends Rectangle {
          * SETS THE COLOUR OF THE OBSTACLES 
          * FROM THE COLOUR PALLET 
          */
+        
         this.setFill(obstacle);
         this.setStrokeWidth(3);
     }
