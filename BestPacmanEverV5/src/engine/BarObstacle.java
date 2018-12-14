@@ -1,13 +1,13 @@
 package engine;
 
 
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class BarObstacle extends Rectangle {
 
     public static double THICKNESS = 25;
+    public static Color obstacle = Color.BLUE;
     /**
      *
      * @param x
@@ -25,7 +25,11 @@ public class BarObstacle extends Rectangle {
             this.setHeight(length * BarObstacle.THICKNESS);
             this.setWidth(BarObstacle.THICKNESS);
         }
-        this.setFill(Color.CADETBLUE);
+        /*
+         * SETS THE COLOUR OF THE OBSTACLES 
+         * FROM THE COLOUR PALLET 
+         */
+        this.setFill(obstacle);
         this.setStrokeWidth(3);
     }
 }

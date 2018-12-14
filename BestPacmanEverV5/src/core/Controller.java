@@ -8,11 +8,13 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
 
 public class Controller {
-	
+	public static Color background = Color.BLACK;
 	
 	
 	
@@ -26,6 +28,10 @@ public class Controller {
   theStage.setScene( theScene );
 
   Canvas canvas = new Canvas( 1225, 600 );
+  GraphicsContext gc = canvas.getGraphicsContext2D();
+  gc.setFill(background);
+  gc.fillRect(0,0,1225,600);
+
   root.getChildren().add( canvas );
   GameManager gameManager = new GameManager(root);
 

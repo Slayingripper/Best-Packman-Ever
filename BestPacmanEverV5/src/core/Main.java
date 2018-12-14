@@ -6,7 +6,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.Group;
+import javafx.scene.paint.Color;
 import javafx.scene.Scene;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -49,7 +51,7 @@ public class Main extends Application {
     	 */
     	 Parent root = FXMLLoader.load(getClass().getResource("homescreen.fxml"));
          theStage.setTitle( "Pacman" );
-         Scene start = new Scene(root, 1225, 600);
+         Scene start = new Scene(root, 1225, 600, Color.RED);
          theStage.setScene( start );
          theStage.show();
          this.newStage = theStage;

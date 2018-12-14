@@ -32,7 +32,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-
+import javafx.scene.paint.Color;
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
