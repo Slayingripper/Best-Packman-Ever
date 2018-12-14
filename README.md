@@ -2,16 +2,19 @@
 
 Best Pacman Ever
 
-
-##Features
+### Features
 
 Custom Colour Support
-Sounds and Intro music
-Custom Animated Sprites 
-Easy to use Design 
-Storable High Score (With reset button) 
-High Score popup 
 
+Sounds and Intro music
+
+Custom Animated Sprites 
+
+Easy to use Design 
+
+Storable High Score (With reset button) 
+
+High Score popup 
 
 ## Getting Started
 
