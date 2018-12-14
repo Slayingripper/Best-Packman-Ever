@@ -6,7 +6,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+ style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="engine.Setupcontroll">
    <children>
       <ImageView fitHeight="329.0" fitWidth="273.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -15,6 +16,6 @@
       </ImageView>
       <ColorPicker fx:id="background" layoutX="313.0" layoutY="101.0" promptText="Background" />
       <ColorPicker fx:id="obstacle" layoutX="313.0" layoutY="200.0" promptText="obstacle" />
-      <Button layoutX="310.0" layoutY="349.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="124.0"  text="Save" />
+      <Button layoutX="310.0" layoutY="349.0" mnemonicParsing="false"  prefHeight="25.0"  prefWidth="124.0" onAction="#returntomain"   text="Save" />
    </children>
 </Pane>

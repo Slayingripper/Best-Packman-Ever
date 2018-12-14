@@ -406,6 +406,8 @@ public class GameManager {
             case DOWN:
                 this.downPacmanAnimation.start();      
                 break;
+            case ESCAPE:
+            	restartGame(event);
 		default:
 			break;
         }
@@ -429,6 +431,8 @@ public class GameManager {
             case DOWN:
                 this.downPacmanAnimation.stop();
                 break;
+            case ESCAPE:
+            	restartGame(event);
 		default:
 			break;
         }

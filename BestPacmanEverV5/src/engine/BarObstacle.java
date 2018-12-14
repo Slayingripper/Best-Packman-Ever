@@ -1,13 +1,14 @@
 package engine;
 
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class BarObstacle extends Rectangle {
 	public static Color obstacle = Color.BLUE;
     public static double THICKNESS = 25;
-   
     /**
      *
      * @param x

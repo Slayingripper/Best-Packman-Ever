@@ -20,9 +20,9 @@ public class Setupcontroll {
 	public void initialise() {
 	}
 	
-	@FXML public void returnStartMenu(ActionEvent event) throws IOException {
+	@FXML public void returntomain(ActionEvent event) throws IOException {
 		
-		assignColours();
+		colourpicker();
 		Parent start = FXMLLoader.load(getClass().getResource("set.fxml")) ;
 	    Scene startScene = new Scene(start);
 		Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -30,7 +30,8 @@ public class Setupcontroll {
 
 	}
 
-	private void assignColours() {
+	private void colourpicker() {
+		
 		BarObstacle.obstacle = obstacle.getValue();
 		Controller.background = background.getValue();
 		
