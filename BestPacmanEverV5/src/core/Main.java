@@ -70,7 +70,9 @@ public class Main extends Application {
       		} catch (java.net.MalformedURLException murle) {
       		System.out.println(murle);
       		}
+    	 
     	launch(args);
+    	
     	
     }
     

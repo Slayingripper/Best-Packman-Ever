@@ -6,6 +6,7 @@ package engine;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -18,14 +19,31 @@ import javafx.scene.text.Font;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.swing.JButton;
+import javax.swing.JEditorPane;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
 
 import core.Cookie;
 import core.Ghost;
@@ -89,6 +107,10 @@ public class GameManager {
         score -= 10;
         this.scoreBoard.lifes.setText("Lifes: " + this.lifes);
         this.scoreBoard.score.setText("Score: " + this.score);
+        
+        //plays pc speaker BEEP when you die!! 
+        java.awt.Toolkit.getDefaultToolkit().beep(); 
+
         try {
       		@SuppressWarnings("deprecation")
 			java.applet.AudioClip clip =
@@ -99,11 +121,17 @@ public class GameManager {
       		System.out.println(murle);
       		}
         if (lifes == 0) {
+        	
+
         	createWindow();
+        	saveScore();
+        	Highscore();
         	this.endGame();
-            
+        	
         }
-    }
+    	
+        }
+    
     /*
      * Create a window that Displays the score of the player
      */
@@ -113,12 +141,84 @@ public class GameManager {
     	      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	      JLabel textLabel = new JLabel("Score:"+score,SwingConstants.CENTER);
     	      textLabel.setPreferredSize(new Dimension(300, 100));
-    	      frame.getContentPane().add(textLabel, BorderLayout.CENTER);
+    	      frame.getContentPane().add(textLabel, BorderLayout.NORTH);
     	      //Display the window.
+    	      
     	      frame.setLocationRelativeTo(null);
     	      frame.pack();
     	      frame.setVisible(true);
     	   }
+   
+   /*
+    * Create a window that Displays the all the scores of the player
+    * With the ability to delete the file with the high scores
+    */
+   public static void Highscore()
+   {
+       final JTextArea edit = new JTextArea(30, 60);
+       
+
+       JButton read = new JButton("Show HighScore");
+       read.addActionListener( new ActionListener()
+       {
+           public void actionPerformed(ActionEvent e)
+           {
+               try
+               {
+                   FileReader reader = new FileReader( "BestPacmanEverV5\\src\\SCORES.txt" );
+                   BufferedReader br = new BufferedReader(reader);
+                   edit.read( br, null );
+                   br.close();
+                   edit.requestFocus();
+               }
+               catch(Exception e2) { System.out.println(e2); }
+           }
+       });
+       JButton Delete = new JButton("Delete");
+       Delete.addActionListener( new ActionListener()
+       {
+    	
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			   Delete();
+		}
+       });
+
+      
+
+       JFrame frame = new JFrame("HighScore");
+       frame.getContentPane().add( new JScrollPane(edit), BorderLayout.NORTH );
+       frame.getContentPane().add(read, BorderLayout.WEST);
+       frame.getContentPane().add(Delete, BorderLayout.EAST);
+       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       frame.pack();
+       frame.setLocationRelativeTo( null );
+       frame.setVisible(true);
+   }
+   
+   /*
+    * The Delete function for the high scores
+    */
+   public static void Delete() 
+   { 
+       File file = new File("BestPacmanEverV5\\src\\SCORES.txt"); 
+         
+       if(file.delete()) 
+       { 
+           System.out.println("File deleted successfully"); 
+       } 
+       else
+       { 
+           System.out.println("Failed to delete the file"); 
+       } 
+   } 
+
+		
+	        
+	    
+	
+   
     /**
      * Ends the game
      */
@@ -403,6 +503,8 @@ public class GameManager {
 
     /**
      * Checks if the Pacman touches cookies.
+     * and if he eats the cookies plays the PC'S internal speaker 
+     * OR the windows/osx default sound if it does not have one
      * @param pacman
      * @param axis
      */
@@ -426,6 +528,7 @@ public class GameManager {
                     if (cookie.isVisible()) {
                         this.score += cookie.getValue();
                         this.cookiesEaten++;
+                        java.awt.Toolkit.getDefaultToolkit().beep(); 
                     }
                     cookie.hide();
                 }
@@ -434,6 +537,7 @@ public class GameManager {
                     if (cookie.isVisible()) {
                         this.score += cookie.getValue();
                         this.cookiesEaten++;
+                        java.awt.Toolkit.getDefaultToolkit().beep(); 
                     }
                     cookie.hide();
                 }
@@ -443,6 +547,7 @@ public class GameManager {
                     if (cookie.isVisible()) {
                         this.score += cookie.getValue();
                         this.cookiesEaten++;
+                        java.awt.Toolkit.getDefaultToolkit().beep(); 
                     }
                     cookie.hide();
                 }
@@ -451,8 +556,13 @@ public class GameManager {
                     if (cookie.isVisible()) {
                         this.score += cookie.getValue();
                         this.cookiesEaten++;
+                        java.awt.Toolkit.getDefaultToolkit().beep(); 
                     }
+                    
                     cookie.hide();
+                    
+
+                   
                 }
             }
             this.scoreBoard.score.setText("Score: " + this.score);
@@ -460,11 +570,26 @@ public class GameManager {
 //            	if (score == 700) {
 //            		popscore();
 //            	}
+            	 
                 this.endGame();
             }
         }
     }
+    //Saves scores to file 
+    public void saveScore() {
 
+        try {
+            FileWriter scoresFile = new FileWriter("BestPacmanEverV5\\src\\SCORES.txt",true);
+            BufferedWriter writer = new BufferedWriter(scoresFile);
+           writer.append(String.format(score + "\n"));
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        }
+    
+   
+       
 
 	/**
      * Checks if pacman is touching a ghost

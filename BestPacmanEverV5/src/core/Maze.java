@@ -56,11 +56,6 @@ public class Maze {
 //    public static void setBarcolor(Color color) {
 //    	Maze.color = color;
 //    }
-    
-    
-    
-    
-    
     /**
      * Draws the maze
      * @param root
